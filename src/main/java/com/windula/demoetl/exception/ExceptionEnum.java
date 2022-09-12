@@ -6,6 +6,7 @@ public enum ExceptionEnum {
     DATABASE_PROPERTIES_FETCH(101, "Database properties fetch failed"),
     DATABASE_CONNECTION_FAILURE(102, "Database connection failed"),
 
+    API_CALL_FAILURE(104, "API call failed"),
 
     DATABASE_QUERY_FAILURE(103, "Database query failed");
 

@@ -25,7 +25,7 @@ import javax.sql.DataSource;
         transactionManagerRef = "demoetlTransactionManager",
         basePackages = "com.windula.demoetl.dao"
 )
-@PropertySource("classpath:application-${SERVER_ENVIRONMENT_VARIABLE}.properties")
+@PropertySource("classpath:application.properties")
 public class DemoETLDataSourceInitializer extends DataSourceInitializer{
 
     @Value("${databasePort}")
@@ -53,7 +53,7 @@ public class DemoETLDataSourceInitializer extends DataSourceInitializer{
 
         } catch (NullPointerException npe) {
 
-            LOGGER.error("error: demoetlDataSourceInitializer database SSM parameters fetch failed", npe);
+            LOGGER.error("error: demoetl DataSourceInitializer database failed", npe);
             throw new ConfigurationException(ExceptionEnum.DATABASE_PROPERTIES_FETCH);
         }
 

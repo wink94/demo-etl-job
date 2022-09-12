@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@PropertySource("classpath:application-${SERVER_ENVIRONMENT_VARIABLE}.properties")
+@PropertySource("classpath:application.properties")
 public class ConfigurationProvider {
 
     @Bean

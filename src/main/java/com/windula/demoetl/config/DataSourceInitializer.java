@@ -2,8 +2,6 @@ package com.windula.demoetl.config;
 
 import com.windula.demoetl.exception.ConfigurationException;
 import com.windula.demoetl.exception.ExceptionEnum;
-import com.windula.demoetl.exception.ConfigurationException;
-import com.windula.demoetl.exception.ExceptionEnum;
 import com.zaxxer.hikari.HikariDataSource;
 import net.ttddyy.dsproxy.support.ProxyDataSourceBuilder;
 import org.hibernate.jpa.HibernatePersistenceProvider;
@@ -25,10 +23,10 @@ import java.sql.Connection;
 import java.util.Properties;
 
 import static java.util.concurrent.TimeUnit.MINUTES;
-@PropertySource("classpath:application-${SERVER_ENVIRONMENT_VARIABLE}.properties")
+@PropertySource("classpath:application.properties")
 public abstract class DataSourceInitializer {
 
-    private static final String[] entityManagerPackages = {"com.windula.oms.dao", "com.windula.oms.model"};
+    private static final String[] entityManagerPackages = {"com.windula.demoetl.dao", "com.windula.demoetl.model"};
     private static final Logger LOGGER = LoggerFactory.getLogger(DataSourceInitializer.class);
 
     private static final int MAXIMUM_POOL_SIZE = 20;
@@ -112,7 +110,7 @@ public abstract class DataSourceInitializer {
 
     DefaultPersistenceUnitManager getDefaultPersistenceUnitManager(DataSource dataSource, String persistenceUnitName) {
         DefaultPersistenceUnitManager defaultPersistenceUnitManager = new DefaultPersistenceUnitManager();
-        defaultPersistenceUnitManager.setPackagesToScan("com.windula.oms");
+        defaultPersistenceUnitManager.setPackagesToScan("com.windula.demoetl");
         defaultPersistenceUnitManager.setDefaultPersistenceUnitName(persistenceUnitName);
         defaultPersistenceUnitManager.setDefaultDataSource(dataSource);
         return defaultPersistenceUnitManager;

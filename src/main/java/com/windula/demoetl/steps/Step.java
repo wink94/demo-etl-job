@@ -16,11 +16,11 @@ public abstract class Step {
 
     protected static final Logger logger = LoggerFactory.getLogger(Step.class);
 
-    private static final ConcurrentLinkedQueue<Object> invoiceQueue = new ConcurrentLinkedQueue<>();
+    private static final ConcurrentLinkedQueue<Integer> pageNumberQueue = new ConcurrentLinkedQueue<>();
 
     public abstract void execute() throws InterruptedException;
 
-    protected ConcurrentLinkedQueue<Object> getInvoiceQueue(){
-        return invoiceQueue;
+    protected ConcurrentLinkedQueue<Integer> getConcurrentLinkedQueue(){
+        return pageNumberQueue;
     }
 }
