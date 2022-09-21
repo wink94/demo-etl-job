@@ -5,6 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
+
+/**
+ * The type Fetch data initialize step.
+ */
 @Component
 public class FetchDataInitializeStep extends Step{
 

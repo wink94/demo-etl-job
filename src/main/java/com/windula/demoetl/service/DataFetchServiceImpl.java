@@ -12,6 +12,9 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * The type Data fetch service.
+ */
 @Service
 public class DataFetchServiceImpl implements DataFetchService {
 

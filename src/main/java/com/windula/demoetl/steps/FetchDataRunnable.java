@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDate;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * The type Fetch data runnable.
+ */
 public class FetchDataRunnable implements Runnable {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FetchDataRunnable.class);
@@ -21,14 +24,30 @@ public class FetchDataRunnable implements Runnable {
     private BeerService beerService;
     private LocalDate date;
 
+    /**
+     * Sets date.
+     *
+     * @param date the date
+     */
     public void setDate(LocalDate date) {
         this.date = date;
     }
 
+    /**
+     * Sets concurrent linked queue.
+     *
+     * @param concurrentLinkedQueue the concurrent linked queue
+     */
     public void setConcurrentLinkedQueue(ConcurrentLinkedQueue<Integer> concurrentLinkedQueue) {
         this.concurrentLinkedQueue = concurrentLinkedQueue;
     }
 
+    /**
+     * Instantiates a new Fetch data runnable.
+     *
+     * @param dataFetchService the data fetch service
+     * @param beerService      the beer service
+     */
     public FetchDataRunnable(DataFetchService dataFetchService, BeerService beerService) {
         this.dataFetchService = dataFetchService;
         this.beerService = beerService;

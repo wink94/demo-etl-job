@@ -16,6 +16,9 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * The type Fetch data step.
+ */
 @Component
 public class FetchDataStep extends Step {
 
